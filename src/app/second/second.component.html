@@ -1,0 +1,13 @@
+<p>second works!</p>
+
+<!-- @Input -->
+<app-first [data]="message"></app-first>
+
+<!-- @Output -->
+<app-first (event)="revieveTheMsg($event)"></app-first>
+
+<h3>child says : {{recieveMsg}}</h3>
+
+<!-- from service -->
+
+<h5>from service {{msgServiceStore}}</h5>
