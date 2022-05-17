@@ -22,7 +22,23 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgIfComponent } from './ng-if/ng-if.component';
 import { NgSwitchComponent } from './ng-switch/ng-switch.component';
 import { NgForComponent } from './ng-for/ng-for.component';
+import { AboutComponent } from './about/about.component';
+import { HomeComponent } from './home/home.component';
+import { ProductComponent } from './product/product.component';
+import { ContactComponent } from './contact/contact.component';
+import { RouterModule, Routes } from '@angular/router';
+import { LoginComponent } from './login/login.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
+const appRoutes: Routes = [
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'about', component: AboutComponent },
+  { path: 'product', component: ProductComponent },
+  { path: 'contact', component: ContactComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'home', component: HomeComponent },
+  { path: '**', component: PageNotFoundComponent }
+];
 
 @NgModule({
   declarations: [
@@ -41,13 +57,20 @@ import { NgForComponent } from './ng-for/ng-for.component';
     NgIfComponent,
     NgSwitchComponent,
     NgForComponent,
+    AboutComponent,
+    HomeComponent,
+    ProductComponent,
+    ContactComponent,
+    LoginComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     BsDatepickerModule.forRoot(),
-    BrowserAnimationsModule
-    
+    BrowserAnimationsModule,
+    RouterModule.forRoot(appRoutes)
+
   ],
   providers: [ServiceService],
   bootstrap: [AppComponent]

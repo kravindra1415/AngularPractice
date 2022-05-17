@@ -6,4 +6,18 @@
 <!-- <app-two-way></app-two-way> -->
 <!-- <app-ng-if></app-ng-if> -->
 <!-- <app-ng-switch></app-ng-switch> -->
-<app-ng-for></app-ng-for>
+<!-- <app-ng-for></app-ng-for> -->
+
+<header>
+    <nav>
+        <ul class="nav nav-tabs">
+            <li class="nav-item"><a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
+                    routerLink="/">Home</a></li>
+            <li class="nav-item"><a class="nav-link" routerLinkActive="active" routerLink='/about'>About us</a></li>
+            <li class="nav-item"><a class="nav-link" routerLinkActive="active" routerLink='/product'>Product</a></li>
+            <li class="nav-item"><a class="nav-link" routerLinkActive="active" routerLink='/contact'>Contact Us</a></li>
+        </ul>
+    </nav>
+</header>
+
+<router-outlet></router-outlet>
